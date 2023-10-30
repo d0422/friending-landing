@@ -7,6 +7,9 @@ module.exports = {
       mobile: '360px',
       pc: '768px',
     },
+    fontFamily: {
+      Pretendard: 'Pretendard-Regular',
+    },
   },
   plugins: [],
 };
