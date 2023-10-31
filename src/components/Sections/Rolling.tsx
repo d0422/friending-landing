@@ -120,7 +120,7 @@ export const Rolling = () => {
   }, []);
 
   return (
-    <div className="w-full h-[1880px] flex flex-col justify-center items-center">
+    <div className="w-full h-[130vw] flex flex-col justify-center items-center">
       <div className="text-[#ffffff] text-[4vw] mt-[16%] mb-[10%] flex justify-center">
         1초만에 교환하세요.
       </div>
