@@ -41,10 +41,10 @@ const Icon = ({ src, style }: { src: string; style: StyleOption }) => {
         transition: 'all 1s ease-in-out',
       }}
     >
-      <div className={`w-[8vw] h-[8vw] relative `}>
+      <div className={`w-[8vw] h-[8vw] relative mobile:w-[12vw] h-[12vw]`}>
         <Image src={src} alt="icon" layout="fill" objectFit="contain" />
         <div
-          className="w-[5vw] h-[5vw]"
+          className="w-[5vw] h-[5vw] mobile:w-[9vw] h-[9vw]"
           style={{
             position: 'absolute',
             left: '50%',
@@ -91,13 +91,14 @@ const styleOptions: StyleOption[] = [
   },
   { position: { bottom: `${DEFAULT_VW * 2}%`, left: 0 }, brightness: 50 },
 ];
+
 export const Rolling = () => {
   return (
     <div className="w-full h-[1880px] flex flex-col justify-center items-center">
-      <div className="text-[#ffffff] text-[60px] mt-[16%] mb-[10%] flex justify-center">
+      <div className="text-[#ffffff] text-[4vw] mt-[16%] mb-[10%] flex justify-center">
         1초만에 교환하세요
       </div>
-      <div className="relative w-[55vw] h-[55vw]">
+      <div className="relative w-[55vw] h-[55vw] mobile:w-[80vw] h-[80vw]">
         {ICONS.map((icon) => `/icons/${icon}.png`).map((icon, i) => (
           <Icon key={i} src={icon} style={styleOptions[i]} />
         ))}
