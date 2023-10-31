@@ -124,12 +124,12 @@ export const Rolling = () => {
       <div className="text-[#ffffff] text-[4vw] mt-[16%] mb-[10%] flex justify-center">
         1초만에 교환하세요.
       </div>
-      <div className="relative pc:w-[55vw] pc:h-[55vw] mobile:w-[80vw] mobile:h-[80vw]">
+      <div className="relative mb-[10%] pc:w-[55vw] pc:h-[55vw] mobile:w-[80vw] mobile:h-[80vw]">
         {ICONS.map((icon) => `/icons/${icon}.png`).map((icon, i) => (
           <Icon key={i} src={icon} style={styleArray[i]} />
         ))}
       </div>
-      <div className="text-[#ffffff] text-[4vw] mt-[16%] mb-[10%] flex justify-center">
+      <div className="text-[#ffffff] text-[4vw] flex justify-center">
         무엇이든
       </div>
     </div>
