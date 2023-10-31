@@ -45,7 +45,7 @@ const words: WordObject[] = [
       top: 5,
       left: 2,
     },
-    delay: 2,
+    delay: 6,
     duration: 3,
   },
   {
