@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {},
     screens: {
-      mobile: '360px',
-      pc: '768px',
+      mobile: { min: '360px', max: '767px' },
+      pc: { min: '768px' },
     },
     fontFamily: {
       Pretendard: 'Pretendard-Regular',
