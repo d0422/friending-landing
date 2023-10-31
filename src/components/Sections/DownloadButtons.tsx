@@ -1,4 +1,4 @@
-import { DownloadButton } from './common/DownloadButton';
+import { DownloadButton } from '../common/DownloadButton';
 
 export const DownloadButtons = () => {
   const contents = [

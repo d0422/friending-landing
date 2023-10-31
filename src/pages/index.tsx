@@ -1,6 +1,6 @@
-import { DownloadButtons } from '@/components/DownloadButtons';
-import { Logo } from '@/components/Logo';
-import { Video } from '@/components/Video';
+import { DownloadButtons } from '@/components/Sections/DownloadButtons';
+import { Logo } from '@/components/Sections/Logo';
+import { Video } from '@/components/Sections/Video';
 
 export default function App() {
   return (
