@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 const ICONS = [
   'blind',
   'call',
@@ -13,19 +12,20 @@ const ICONS = [
   'thread',
   'twitter',
 ];
-const ICON_SIZE = 126;
 
 type Position = {
-  top?: number;
-  left?: number;
-  right?: number;
-  bottom?: number;
+  top?: string | number;
+  left?: string | number;
+  right?: string | number;
+  bottom?: string | number;
 };
 type StyleOption = {
   center?: boolean;
   position: Position;
   brightness: number;
 };
+
+const DEFAULT_VW = 16.6;
 
 const Icon = ({ src, style }: { src: string; style: StyleOption }) => {
   return (
@@ -41,10 +41,10 @@ const Icon = ({ src, style }: { src: string; style: StyleOption }) => {
         transition: 'all 1s ease-in-out',
       }}
     >
-      <div className={`w-[126px] h-[126px] relative `}>
+      <div className={`w-[8vw] h-[8vw] relative `}>
         <Image src={src} alt="icon" layout="fill" objectFit="contain" />
         <div
-          className="w-[100px] h-[100px]"
+          className="w-[5vw] h-[5vw]"
           style={{
             position: 'absolute',
             left: '50%',
@@ -61,23 +61,35 @@ const Icon = ({ src, style }: { src: string; style: StyleOption }) => {
 
 const styleOptions: StyleOption[] = [
   {
-    position: { top: ICON_SIZE * 2, left: 0 },
+    position: { top: `${DEFAULT_VW * 2}%`, left: 0 },
     brightness: 75,
   },
-  { position: { top: ICON_SIZE, left: ICON_SIZE }, brightness: 90 },
   {
-    position: { top: 0, left: ICON_SIZE * 2 + 85 },
+    position: { top: `${DEFAULT_VW}%`, left: `${DEFAULT_VW}%` },
+    brightness: 90,
+  },
+  {
+    position: { top: 0, left: `${DEFAULT_VW * 2 + DEFAULT_VW / 2}%` },
     center: true,
     brightness: 100,
   },
-  { position: { top: ICON_SIZE, right: ICON_SIZE }, brightness: 90 },
-  { position: { top: ICON_SIZE * 2, right: 0 }, brightness: 75 },
-  { position: { bottom: ICON_SIZE * 2, right: 0 }, brightness: 50 },
-  { position: { bottom: ICON_SIZE, right: ICON_SIZE }, brightness: 50 },
-  { position: { bottom: 0, right: ICON_SIZE * 2 }, brightness: 25 },
-  { position: { bottom: 0, left: ICON_SIZE * 2 }, brightness: 25 },
-  { position: { bottom: ICON_SIZE, left: ICON_SIZE }, brightness: 50 },
-  { position: { bottom: ICON_SIZE * 2, left: 0 }, brightness: 50 },
+  {
+    position: { top: `${DEFAULT_VW}%`, right: `${DEFAULT_VW}%` },
+    brightness: 90,
+  },
+  { position: { top: `${DEFAULT_VW * 2}%`, right: 0 }, brightness: 75 },
+  { position: { bottom: `${DEFAULT_VW * 2}%`, right: 0 }, brightness: 50 },
+  {
+    position: { bottom: `${DEFAULT_VW}%`, right: `${DEFAULT_VW}%` },
+    brightness: 50,
+  },
+  { position: { bottom: 0, right: `${DEFAULT_VW * 2}%` }, brightness: 25 },
+  { position: { bottom: 0, left: `${DEFAULT_VW * 2}%` }, brightness: 25 },
+  {
+    position: { bottom: `${DEFAULT_VW}%`, left: `${DEFAULT_VW}%` },
+    brightness: 50,
+  },
+  { position: { bottom: `${DEFAULT_VW * 2}%`, left: 0 }, brightness: 50 },
 ];
 export const Rolling = () => {
   return (
@@ -85,7 +97,7 @@ export const Rolling = () => {
       <div className="text-[#ffffff] text-[60px] mt-[16%] mb-[10%] flex justify-center">
         1초만에 교환하세요
       </div>
-      <div className="relative  w-[800px] h-[800px]">
+      <div className="relative w-[55vw] h-[55vw]">
         {ICONS.map((icon) => `/icons/${icon}.png`).map((icon, i) => (
           <Icon key={i} src={icon} style={styleOptions[i]} />
         ))}
