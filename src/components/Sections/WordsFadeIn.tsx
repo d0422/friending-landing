@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { Vector } from '../common/Vector';
 
 type WordObject = {
   word: string;
@@ -190,38 +190,26 @@ const words: WordObject[] = [
   },
 ];
 
-const Vector4 = () => {
-  return (
-    <div className="w-[19vw] h-[19vw] absolute top-[55%] left-[10%]">
-      <Image
-        src="/vector4.png"
-        alt="vector"
-        layout="fill"
-        objectFit="contain"
-      />
-    </div>
-  );
-};
-const Vector5 = () => {
-  return (
-    <div className="w-[22vw] h-[22vw] absolute top-[3%] left-[75%]">
-      <Image
-        src="/vector5.png"
-        alt="vector"
-        layout="fill"
-        objectFit="contain"
-      />
-    </div>
-  );
-};
 export const WordsFadeIn = () => {
   return (
     <div className="w-full h-[70vw] relative">
       {words.map((word) => (
         <Word wordObject={word} />
       ))}
-      <Vector4 />
-      <Vector5 />
+      <Vector
+        src="/vector4.png"
+        width="19vw"
+        height="19vw"
+        top="55%"
+        left="10%"
+      />
+      <Vector
+        src="/vector5.png"
+        width="22vw"
+        height="22vw"
+        top="3%"
+        left="75%"
+      />
     </div>
   );
 };
