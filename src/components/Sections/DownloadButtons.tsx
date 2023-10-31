@@ -8,7 +8,11 @@ export const DownloadButtons = () => {
   return (
     <div className="flex w-full justify-center items-center gap-5 my-20">
       {contents.map((content) => (
-        <DownloadButton src={content.src} contentName={content.contentName} />
+        <DownloadButton
+          key={content.contentName}
+          src={content.src}
+          contentName={content.contentName}
+        />
       ))}
     </div>
   );
