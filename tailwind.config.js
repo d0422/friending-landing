@@ -4,7 +4,17 @@ const px0_400 = { ...Array.from(Array(401)).map((_, i) => `${i}px`) };
 module.exports = {
   content: ['./public/index.html', './src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fadeIn: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 1s infinite',
+      },
+    },
     screens: {
       mobile: { min: '360px', max: '767px' },
       pc: { min: '768px' },
