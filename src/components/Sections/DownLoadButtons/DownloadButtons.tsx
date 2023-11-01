@@ -1,10 +1,11 @@
-import { DownloadButton } from '../common/DownloadButton';
+import { DownloadButton } from '../../common/DownloadButton';
+
+const contents = [
+  { src: '/apple.png', contentName: '앱스토어' },
+  { src: '/playStore.png', contentName: '플레이스토어' },
+];
 
 export const DownloadButtons = () => {
-  const contents = [
-    { src: '/apple.png', contentName: '앱스토어' },
-    { src: '/playStore.png', contentName: '플레이스토어' },
-  ];
   return (
     <div className="flex w-full justify-center items-center gap-5 my-20">
       {contents.map((content) => (

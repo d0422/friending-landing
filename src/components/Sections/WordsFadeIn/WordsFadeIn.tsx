@@ -1,4 +1,4 @@
-import { Vector } from '../common/Vector';
+import { Vector } from '../../common/Vector';
 
 type WordObject = {
   word: string;
@@ -192,24 +192,29 @@ const words: WordObject[] = [
 
 export const WordsFadeIn = () => {
   return (
-    <div className="w-full h-[70vw] relative">
-      {words.map((word) => (
-        <Word wordObject={word} />
-      ))}
-      <Vector
-        src="/vector4.png"
-        width="19vw"
-        height="19vw"
-        top="55%"
-        left="10%"
-      />
-      <Vector
-        src="/vector5.png"
-        width="22vw"
-        height="22vw"
-        top="3%"
-        left="75%"
-      />
+    <div>
+      <div className="w-full h-[70vw] relative">
+        {words.map((word) => (
+          <Word wordObject={word} />
+        ))}
+        <Vector
+          src="/vector4.png"
+          width="19vw"
+          height="19vw"
+          top="55%"
+          left="10%"
+        />
+        <Vector
+          src="/vector5.png"
+          width="22vw"
+          height="22vw"
+          top="3%"
+          left="75%"
+        />
+      </div>
+      <div className="text-[#ffffff] text-[4vw] flex justify-center">
+        이것까지도
+      </div>
     </div>
   );
 };

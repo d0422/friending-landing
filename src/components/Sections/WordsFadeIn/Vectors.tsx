@@ -1,4 +1,4 @@
-import { Vector } from '../common/Vector';
+import { Vector } from '../../common/Vector';
 
 export const Vectors = () => {
   return (
