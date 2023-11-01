@@ -17,17 +17,7 @@ const Card = ({ cardInfo }: { cardInfo: CardInfo }) => {
         }) translateZ(${translateZ}) `,
       }}
     >
-      <Image
-        src={src}
-        width={0}
-        height={0}
-        sizes="100vw"
-        alt="profileCards"
-        style={{
-          width: '15vw',
-          height: 'auto',
-        }}
-      />
+      <Image src={src} width={0} height={0} sizes="100%" alt="profileCards" />
     </div>
   );
 };
@@ -37,7 +27,7 @@ export const ProfileCards = () => {
     <div className="flex justify-center items-center flex-col">
       <div className="flex">
         {cardsInfo.map((cardInfo) => (
-          <Card cardInfo={cardInfo} />
+          <Card key={cardInfo.src} cardInfo={cardInfo} />
         ))}
       </div>
       <div className="mt-[15vw]">
