@@ -17,7 +17,17 @@ const Card = ({ cardInfo }: { cardInfo: CardInfo }) => {
         }) translateZ(${translateZ}) `,
       }}
     >
-      <Image src={src} width={0} height={0} sizes="100%" alt="profileCards" />
+      <Image
+        src={src}
+        width={0}
+        height={0}
+        sizes="100%"
+        style={{
+          width: '15vw',
+          height: 'auto',
+        }}
+        alt="profileCards"
+      />
     </div>
   );
 };
