@@ -10,3 +10,14 @@ export type StyleOption = {
   position: Position;
   brightness: number;
 };
+
+export type WordObject = {
+  word: string;
+  size: string;
+  position: {
+    top: number;
+    left: number;
+  };
+  delay: number;
+  duration: number;
+};
