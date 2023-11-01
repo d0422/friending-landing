@@ -49,7 +49,7 @@ export const Footer = () => {
           이용약관 | <span className="text-bold">개인정보 처리방침</span>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center font-bold">
         copyright FRIENDING, All Rights Reserved
       </div>
     </div>
