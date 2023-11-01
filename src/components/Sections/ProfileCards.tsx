@@ -40,6 +40,10 @@ export const ProfileCards = () => {
           <Card cardInfo={cardInfo} />
         ))}
       </div>
+      <div className="mt-[15vw]">
+        <Text>원하는 카드를</Text>
+        <Text>필요한 순간에</Text>
+      </div>
     </div>
   );
 };
