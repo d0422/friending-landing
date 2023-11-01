@@ -9,7 +9,7 @@ export const words: WordObject[] = [
         left: 25,
       },
       delay: 1,
-      duration: 7,
+      duration: 10,
     },
     {
       word: '맛집탐방',
@@ -19,7 +19,7 @@ export const words: WordObject[] = [
         left: 2,
       },
       delay: 6,
-      duration: 3,
+      duration: 6,
     },
     {
       word: 'MBTI',
@@ -29,7 +29,7 @@ export const words: WordObject[] = [
         left: 30,
       },
       delay: 2,
-      duration: 4,
+      duration: 8,
     },
     {
       word: '24학번',
@@ -39,7 +39,7 @@ export const words: WordObject[] = [
         left: 20,
       },
       delay: 2,
-      duration: 3,
+      duration: 7,
     },
     {
       word: '부산',
@@ -59,7 +59,7 @@ export const words: WordObject[] = [
         left: 25,
       },
       delay: 2,
-      duration: 4,
+      duration: 11,
     },
     {
       word: '카페투어',
@@ -69,7 +69,7 @@ export const words: WordObject[] = [
         left: 45,
       },
       delay: 2,
-      duration: 7,
+      duration: 13,
     },
     {
       word: 'ENFP',
@@ -79,7 +79,7 @@ export const words: WordObject[] = [
         left: 55,
       },
       delay: 3,
-      duration: 6,
+      duration: 14,
     },
     {
       word: '경영학부',
@@ -89,7 +89,7 @@ export const words: WordObject[] = [
         left: 70,
       },
       delay: 2,
-      duration: 5,
+      duration: 9,
     },
     {
       word: '자전거',
@@ -99,7 +99,7 @@ export const words: WordObject[] = [
         left: 38,
       },
       delay: 4,
-      duration: 4,
+      duration: 8,
     },
     {
       word: '관심사',
@@ -109,7 +109,7 @@ export const words: WordObject[] = [
         left: 46,
       },
       delay: 6,
-      duration: 3,
+      duration: 6,
     },
     {
       word: '서연대',
@@ -119,7 +119,7 @@ export const words: WordObject[] = [
         left: 60,
       },
       delay: 1,
-      duration: 3,
+      duration: 7,
     },
     {
       word: '취미',
@@ -129,7 +129,7 @@ export const words: WordObject[] = [
         left: 78,
       },
       delay: 1,
-      duration: 3,
+      duration: 5,
     },
     {
       word: '생일 08.11',
@@ -139,7 +139,7 @@ export const words: WordObject[] = [
         left: 50,
       },
       delay: 1,
-      duration: 3,
+      duration: 9,
     },
     {
       word: '넷플릭스',
@@ -149,7 +149,7 @@ export const words: WordObject[] = [
         left: 20,
       },
       delay: 1,
-      duration: 4,
+      duration: 10,
     },
     {
       word: '집순이',
@@ -159,7 +159,7 @@ export const words: WordObject[] = [
         left: 20,
       },
       delay: 1,
-      duration: 4,
+      duration: 9,
     },
   ];
   
