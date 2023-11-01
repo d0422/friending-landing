@@ -23,6 +23,10 @@ const rollArray = (array: StyleOption[]) => {
   return [...array];
 };
 
+const makePath = (fileName: string) => {
+  return `/icons/${fileName}.png`;
+};
+
 export const Rolling = () => {
   const [styleArray, setStyleArray] = useState(styleOptions);
   useEffect(() => {
@@ -37,7 +41,7 @@ export const Rolling = () => {
         <Text>1초만에 교환하세요.</Text>
       </div>
       <div className="relative mb-[10%] pc:w-[55vw] pc:h-[55vw] mobile:w-[80vw] mobile:h-[80vw]">
-        {ICONS.map((icon) => `/icons/${icon}.png`).map((icon, i) => (
+        {ICONS.map(makePath).map((icon, i) => (
           <Icon key={i} src={icon} style={styleArray[i]} />
         ))}
       </div>
