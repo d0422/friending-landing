@@ -4,17 +4,17 @@ import { Icon } from './Icon';
 import { styleOptions } from './rollingStyle';
 import { Text } from '@/components/common/Text';
 const ICONS = [
-  'blind',
-  'call',
   'discord',
-  'facebook',
-  'instagram',
-  'kakaoStory',
-  'kakaoTalk',
-  'line',
-  'snapchat',
-  'thread',
+  'call',
+  'band',
   'twitter',
+  'thread',
+  'snapchat',
+  'line',
+  'kakaoTalk',
+  'kakaoStory',
+  'instagram',
+  'facebook',
 ];
 
 const rollArray = (array: StyleOption[]) => {
