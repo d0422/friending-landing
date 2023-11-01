@@ -1,32 +1,44 @@
 import Image from 'next/image';
 import { Text } from '../common/Text';
+import { CardInfo } from '@/type';
+import { cardsInfo } from './cardInfo';
 
-export const ProfileCards = () => {
+const Card = ({ cardInfo }: { cardInfo: CardInfo }) => {
+  const {
+    src,
+    rotateInfo: { rotateY, translateX, translateZ },
+  } = cardInfo;
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div
+      style={{
+        transformStyle: 'preserve-3d',
+        transform: `perspective(34vw) rotateY(${rotateY || 0}) translateX(${
+          translateX || 0
+        }) translateZ(${translateZ}) `,
+      }}
+    >
       <Image
-        src="/profiles.png"
+        src={src}
         width={0}
         height={0}
         sizes="100vw"
         alt="profileCards"
         style={{
-          width: '100%',
-          maxWidth: '1228px',
+          width: '15vw',
           height: 'auto',
         }}
       />
-      <div className="relative mt-[13%] mb-[38%] w-full">
-        <Text>원하는 카드를</Text>
-        <Text>필요한 순간에</Text>
-        <div className="absolute w-[36vw] h-[36vw] -top-[90%] -right-[10%]">
-          <Image
-            src="/vector7.png"
-            alt="vector"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
+    </div>
+  );
+};
+
+export const ProfileCards = () => {
+  return (
+    <div className="flex justify-center items-center flex-col">
+      <div className="flex">
+        {cardsInfo.map((cardInfo) => (
+          <Card cardInfo={cardInfo} />
+        ))}
       </div>
     </div>
   );

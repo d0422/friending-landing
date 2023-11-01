@@ -21,3 +21,14 @@ export type WordObject = {
   delay: number;
   duration: number;
 };
+
+export type RotateInfo = {
+  rotateY?: string;
+  translateX?: string;
+  translateZ: string;
+};
+
+export type CardInfo = {
+  src: string;
+  rotateInfo: RotateInfo;
+};
