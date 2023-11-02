@@ -40,7 +40,7 @@ export const Rolling = () => {
       <div className="mt-[16%] mb-[10%]">
         <Text>1초만에 교환하세요.</Text>
       </div>
-      <div className="relative mb-[10%] pc:w-[55vw] pc:h-[55vw] mobile:w-[80vw] mobile:h-[80vw]">
+      <div className="relative mb-[15%] pc:w-[55vw] pc:h-[55vw] mobile:w-[80vw] mobile:h-[80vw]">
         {ICONS.map(makePath).map((icon, i) => (
           <Icon key={i} src={icon} style={styleArray[i]} />
         ))}

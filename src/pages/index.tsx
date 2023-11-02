@@ -8,7 +8,7 @@ import { Rolling } from '@/components/Sections/Rollling/Rolling';
 import { Vectors } from '@/components/Sections/WordsFadeIn/Vectors';
 import { Video } from '@/components/Sections/Video';
 import { WordsFadeIn } from '@/components/Sections/WordsFadeIn/WordsFadeIn';
-import { ProfileCards } from '@/components/Sections/ProfileCards';
+import { ProfileCards } from '@/components/Sections/ProfileCards/ProfileCards';
 import { Footer } from '@/components/Sections/Footer';
 
 export default function App() {
