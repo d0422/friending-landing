@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { Text } from '../../common/Text';
-import { CardInfo, RotateInfo } from '@/type';
+import { RotateInfo } from '@/type';
 import { cardRollingStyle } from './cardRollingStyle';
-import { useEffect, useState } from 'react';
 import { useRolling } from '@/hooks/useRolling';
 
 const Card = ({ src, rotateInfo }: { src: string; rotateInfo: RotateInfo }) => {

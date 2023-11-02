@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { StyleOption } from '../../../type';
 import { Icon } from './Icon';
 import { styleOptions } from './rollingStyle';
 import { Text } from '@/components/common/Text';
