@@ -24,40 +24,49 @@ export const styleOptions: StyleOption[] = [
     brightness: 90,
   },
   {
-    position: { top: `${DEFAULT_VW * 2}%`, left: `${DEFAULT_VW * 5}%` },
+    position: {
+      top: `${DEFAULT_VW * 2 }%`,
+      left: `${DEFAULT_VW * 5}%`,
+    },
     brightness: 75,
   },
   {
-    position: { top: `${DEFAULT_VW * 3}%`, left: `${DEFAULT_VW * 5}%` },
+    position: {
+      top: `${DEFAULT_VW * 3 + CORRECT_VALUE}%`,
+      left: `${DEFAULT_VW * 5}%`,
+    },
     brightness: 50,
   },
   {
     position: {
-      top: `${DEFAULT_VW * 4}%`,
+      top: `${DEFAULT_VW * 4 + CORRECT_VALUE}%`,
       left: `${DEFAULT_VW * 4 + CORRECT_VALUE}%`,
     },
     brightness: 50,
   },
   {
     position: {
-      top: `${DEFAULT_VW * 5}%`,
+      top: `${DEFAULT_VW * 5 + CORRECT_VALUE}%`,
       left: `${DEFAULT_VW * 3 + CORRECT_VALUE}%`,
     },
     brightness: 25,
   },
   {
     position: {
-      top: `${DEFAULT_VW * 5}%`,
+      top: `${DEFAULT_VW * 5 + CORRECT_VALUE}%`,
       left: `${DEFAULT_VW * 2 - CORRECT_VALUE}%`,
     },
     brightness: 25,
   },
   {
     position: {
-      top: `${DEFAULT_VW * 4}%`,
+      top: `${DEFAULT_VW * 4 + CORRECT_VALUE}%`,
       left: `${DEFAULT_VW - CORRECT_VALUE}%`,
     },
     brightness: 50,
   },
-  { position: { top: `${DEFAULT_VW * 3}%`, left: 0 }, brightness: 50 },
+  {
+    position: { top: `${DEFAULT_VW * 3 + CORRECT_VALUE}%`, left: 0 },
+    brightness: 50,
+  },
 ];
