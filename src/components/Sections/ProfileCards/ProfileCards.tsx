@@ -4,19 +4,19 @@ import { CardInfo, RotateInfo } from '@/type';
 import { cardRollingStyle } from './cardRollingStyle';
 import { useEffect, useState } from 'react';
 
-const Card = ({ cardInfo }: { cardInfo: CardInfo }) => {
-  const {
-    src,
-    rotateInfo: { rotateY, translateX, translateZ },
-  } = cardInfo;
+const Card = ({ src, rotateInfo }: { src: string; rotateInfo: RotateInfo }) => {
+  const { rotateY, translateX, translateZ, left, zIndex } = rotateInfo;
   return (
     <div
+      className="absolute"
       style={{
         transition: 'all 1s',
         transformStyle: 'preserve-3d',
         transform: `perspective(34vw) rotateY(${rotateY || 0}) translateX(${
           translateX || 0
         }) translateZ(${translateZ}) `,
+        left,
+        zIndex,
       }}
     >
       <Image
@@ -34,33 +34,27 @@ const Card = ({ cardInfo }: { cardInfo: CardInfo }) => {
   );
 };
 
-const rollArray = (array: string[]) => {
-  const first = array.shift() as string;
+const rollArray = (array: RotateInfo[]) => {
+  const first = array.shift() as RotateInfo;
   array.push(first);
   return [...array];
 };
 
 export const ProfileCards = () => {
   const cardInfo = ['profile1', 'profile2', 'profile5', 'profile3', 'profile4'];
-  const [cards, setCards] = useState<string[]>(cardInfo);
+  const [style, setStyle] = useState<RotateInfo[]>(cardRollingStyle);
 
   useEffect(() => {
     setInterval(() => {
-      setCards((prev) => rollArray(prev));
+      setStyle((prev) => rollArray(prev));
     }, 2000);
   }, []);
 
-  const cardInfomation = cards.map((card, index) => {
-    return {
-      src: card,
-      rotateInfo: cardRollingStyle[index],
-    } as CardInfo;
-  });
   return (
     <div className="flex justify-center items-center flex-col">
-      <div className="flex">
-        {cardInfomation.map((cardInfo, i) => (
-          <Card key={cardInfo.src + i} cardInfo={cardInfo} />
+      <div className="relative h-[400px] w-[80vw]">
+        {cardInfo.map((src, i) => (
+          <Card key={src + i} src={src} rotateInfo={style[i]} />
         ))}
       </div>
       <div className="mt-[15vw]">

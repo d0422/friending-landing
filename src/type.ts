@@ -26,6 +26,8 @@ export type RotateInfo = {
   rotateY?: string;
   translateX?: string;
   translateZ: string;
+  left: string;
+  zIndex: number;
 };
 
 export type CardInfo = {
