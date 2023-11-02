@@ -35,9 +35,8 @@ const Card = ({ src, rotateInfo }: { src: string; rotateInfo: RotateInfo }) => {
 };
 
 const rollArray = (array: RotateInfo[]) => {
-  const first = array.shift() as RotateInfo;
-  array.push(first);
-  return [...array];
+  const last = array.pop() as RotateInfo;
+  return [last, ...array];
 };
 
 export const ProfileCards = () => {
