@@ -40,7 +40,7 @@ export const ProfileCards = () => {
 
   return (
     <div className="flex justify-center items-center flex-col">
-      <div className="relative h-[400px] w-[80vw]">
+      <div className="relative h-[30vw] w-[80vw]">
         {cardInfo.map((src, i) => (
           <Card key={src + i} src={src} rotateInfo={style[i]} />
         ))}
