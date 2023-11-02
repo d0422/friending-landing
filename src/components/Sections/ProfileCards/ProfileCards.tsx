@@ -3,6 +3,7 @@ import { Text } from '../../common/Text';
 import { CardInfo, RotateInfo } from '@/type';
 import { cardRollingStyle } from './cardRollingStyle';
 import { useEffect, useState } from 'react';
+import { useRolling } from '@/hooks/useRolling';
 
 const Card = ({ src, rotateInfo }: { src: string; rotateInfo: RotateInfo }) => {
   const { rotateY, translateX, translateZ, left, zIndex } = rotateInfo;
@@ -34,20 +35,9 @@ const Card = ({ src, rotateInfo }: { src: string; rotateInfo: RotateInfo }) => {
   );
 };
 
-const rollArray = (array: RotateInfo[]) => {
-  const last = array.pop() as RotateInfo;
-  return [last, ...array];
-};
-
 export const ProfileCards = () => {
   const cardInfo = ['profile1', 'profile2', 'profile5', 'profile3', 'profile4'];
-  const [style, setStyle] = useState<RotateInfo[]>(cardRollingStyle);
-
-  useEffect(() => {
-    setInterval(() => {
-      setStyle((prev) => rollArray(prev));
-    }, 2000);
-  }, []);
+  const style = useRolling(cardRollingStyle, 'left');
 
   return (
     <div className="flex justify-center items-center flex-col">

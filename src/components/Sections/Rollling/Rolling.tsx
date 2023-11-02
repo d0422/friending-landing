@@ -3,6 +3,7 @@ import { StyleOption } from '../../../type';
 import { Icon } from './Icon';
 import { styleOptions } from './rollingStyle';
 import { Text } from '@/components/common/Text';
+import { useRolling } from '@/hooks/useRolling';
 const ICONS = [
   'discord',
   'call',
@@ -17,23 +18,12 @@ const ICONS = [
   'facebook',
 ];
 
-const rollArray = (array: StyleOption[]) => {
-  const first = array.shift() as StyleOption;
-  array.push(first);
-  return [...array];
-};
-
 const makePath = (fileName: string) => {
   return `/icons/${fileName}.png`;
 };
 
 export const Rolling = () => {
-  const [styleArray, setStyleArray] = useState(styleOptions);
-  useEffect(() => {
-    setInterval(() => {
-      setStyleArray(rollArray);
-    }, 2000);
-  }, []);
+  const styleArray = useRolling(styleOptions, 'right');
 
   return (
     <div className="w-full h-[130vw] flex flex-col justify-center items-center">
