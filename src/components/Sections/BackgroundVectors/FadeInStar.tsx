@@ -10,9 +10,9 @@ export const FadeInStar = ({
 }) => {
   const { top, left, right } = position;
   return (
-    <div className="w-full  h-[36vw] relative">
+    <div className="w-full  h-[30vw] relative">
       <div
-        className="absolute w-[36vw] h-[36vw]"
+        className="absolute w-[30vw] h-[30vw]"
         style={{
           top: `${top}%`,
           left: `${left}%`,

@@ -24,7 +24,7 @@ export const Rolling = () => {
   const styleArray = useRolling(styleOptions, 'right');
 
   return (
-    <div className="w-full h-[130vw] flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center">
       <div className="mt-[16%] mb-[10%]">
         <Text>1초만에 교환하세요.</Text>
       </div>
