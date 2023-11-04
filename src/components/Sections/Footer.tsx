@@ -6,7 +6,7 @@ export const CenterText = ({ children }: { children: string }) => {
 
 export const Footer = () => {
   return (
-    <div className="bg-[#242627] text-[#ffffff]  text-[1.5vw] ">
+    <div className="bg-[#242627] text-[#ffffff]  text-[1.5vw] pb-[1vw]">
       <div className="flex pc:flex-row mobile:flex-col pc:justify-between p-[5.5vw] mobile:justify-center">
         <div className="flex gap-[6vw] pc:flex-row mobile:flex-col mobile:justify-center">
           <div className="w-[20vw] h-[4.8vw] relative mobile:flex mobile:justify-center mobile:w-full">
