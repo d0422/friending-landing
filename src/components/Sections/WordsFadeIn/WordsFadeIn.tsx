@@ -8,7 +8,7 @@ export const WordsFadeIn = () => {
     <div>
       <div className="w-full h-[70vw] relative">
         {words.map((word) => (
-          <Word wordObject={word} />
+          <Word wordObject={word} key={word.word} />
         ))}
         <Vector
           src="/vector4.png"

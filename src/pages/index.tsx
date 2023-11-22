@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <Logo />
-      {/* <Video /> */}
+      <Video />
       <DownloadButtons />
       <Rolling />
       <GreenFadeInStar />
