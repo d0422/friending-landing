@@ -14,7 +14,6 @@ import { RollingProfileCards } from '@/components/Sections/ProfileCards/RollingP
 export default function App() {
   return (
     <>
-      <Logo />
       <Video />
       <DownloadButtons />
       <Rolling />
