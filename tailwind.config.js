@@ -14,6 +14,10 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 1s infinite',
       },
+      colors: {
+        primary: '#514FFF',
+        secondary: '#EAEAFF',
+      },
     },
     screens: {
       mobile: { min: '360px', max: '767px' },
