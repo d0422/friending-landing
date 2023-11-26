@@ -33,14 +33,9 @@ export default function Profile() {
   const [data, setData] = useState<ProfileCard>();
   console.log(isLoading);
   useEffect(() => {
-    console.log(window.location.hostname);
     console.log(1);
     axios
-      .get(
-        `http://api.friending.online/profile/${
-          window.location.search.split(/\?id\=/)[1]
-        }`
-      )
+      .get(`/profile/${window.location.search.split(/\?id\=/)[1]}`)
       .then((res) => setData(res.data));
     setLoading(false);
     setData(data);
