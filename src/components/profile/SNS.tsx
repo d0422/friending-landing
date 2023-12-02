@@ -41,7 +41,7 @@ export const SNS = ({ data }: { data: ProfileCard }) => {
             <SNSButton img={sns.src} href={data[sns.tag]} />
           ))}
           <div
-            className="p-4 rounded-full w-12 bg-[#EAEAFF] flex justify-center items-center"
+            className="p-3 rounded-full w-12 bg-[#EAEAFF] flex justify-center items-center"
             onClick={() => setOpen(true)}
           >
             <Image

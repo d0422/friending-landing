@@ -10,10 +10,12 @@ import { Video } from '@/components/Sections/Video';
 import { WordsFadeIn } from '@/components/Sections/WordsFadeIn/WordsFadeIn';
 import { Footer } from '@/components/Sections/Footer';
 import { RollingProfileCards } from '@/components/Sections/ProfileCards/RollingProfileCards';
+import { Header } from '@/components/Sections/Header';
 
 export default function App() {
   return (
     <>
+      <Header />
       <Video />
       <DownloadButtons />
       <Rolling />

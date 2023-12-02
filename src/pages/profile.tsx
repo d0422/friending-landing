@@ -46,9 +46,9 @@ export default function Profile() {
   }
   if (data)
     return (
-      <div className="flex flex-col items-center justify-center w-full h-screen gap-8 text-black bg-white">
-        <div className="text-3xl font-bold">프렌딩 요청이 왔어요</div>
-        <div className="relative bg-white rounded-2xl max-w-[375px] w-full shadow-md flex-col flex gap-8 justify-center items-center">
+      <div className="flex flex-col items-center justify-center w-full gap-8 p-4 text-black bg-white">
+        <div className="text-2xl font-bold">프렌딩 요청이 왔어요</div>
+        <div className="relative bg-white rounded-2xl max-w-[350px] w-full shadow-md flex-col flex gap-8 justify-center items-center">
           <Image
             src={'/defaultThumbnail.png'}
             alt="profileImg"
@@ -86,10 +86,10 @@ export default function Profile() {
           <div>앱을 무료로 사용할 수 있어요!</div>
         </div>
         <div className="flex gap-4">
-          <div className="bg-[#EAEAFF] text-primary p-4 rounded-lg font-bold px-11">
+          <div className="bg-[#EAEAFF] text-primary p-4 rounded-lg font-bold px-10">
             사진으로 저장
           </div>
-          <div className="bg-[#514FFF] text-white p-4 rounded-lg font-bold px-11">
+          <div className="bg-[#514FFF] text-white p-4 rounded-lg font-bold px-10">
             앱 다운받기
           </div>
         </div>

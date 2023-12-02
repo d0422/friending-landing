@@ -3,7 +3,7 @@ import Image from 'next/image';
 export const SNSButton = ({ href, img }: { href: string; img: string }) => {
   if (img.match('call')) {
     return (
-      <a className="w-12 p-4 rounded-full bg-primary" href={`tel:${href}`}>
+      <a className="w-12 p-3 rounded-full bg-primary" href={`tel:${href}`}>
         <Image
           src={img}
           alt="SNSButton"
@@ -16,7 +16,7 @@ export const SNSButton = ({ href, img }: { href: string; img: string }) => {
     );
   }
   return (
-    <a className="w-12 p-4 rounded-full bg-primary" href={href}>
+    <a className="w-12 p-3 rounded-full bg-primary" href={href}>
       <Image
         src={img}
         alt="profileImg"
