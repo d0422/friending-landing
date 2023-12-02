@@ -45,7 +45,7 @@ export const Video = () => {
     };
   }, []);
   return (
-    <video className="w-full h-[823px]" ref={videoRef}>
+    <video className="w-full mt-15" ref={videoRef}>
       <source src="/landing_mov.mp4"></source>
     </video>
   );
