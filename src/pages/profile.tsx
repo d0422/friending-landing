@@ -58,8 +58,8 @@ export default function Profile() {
             style={{ width: '100%' }}
           />
           <div className="flex flex-col w-full gap-2 px-8 pb-8">
-            <div className="absolute w-full top-[3%] left-[5%] ">
-              <div className="flex items-center justify-center w-20 rounded bg-secondary">
+            <div className="absolute top-[3%] left-[5%] ">
+              <div className="flex items-center justify-center px-2 rounded bg-secondary">
                 {data?.usage}
               </div>
             </div>
