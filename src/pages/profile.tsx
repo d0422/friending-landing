@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Call from '../assets/sns/call.svg';
 import { SNS } from '@/components/profile/SNS';
 
 export interface ProfileCard {

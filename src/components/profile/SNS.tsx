@@ -15,7 +15,7 @@ export const SNSList = [
     src: '/sns/instagram.svg',
     name: '인스타',
   },
-  { tag: 'twitter', src: '/sns/x.svg', name: '트위터' },
+  { tag: 'twitter', src: '/sns/X.svg', name: '트위터' },
   { tag: 'kakaoTalk', src: '/sns/kakaoTalk.svg', name: '카톡' },
   { tag: 'email', src: '/sns/email.svg', name: '이메일' },
   { tag: 'facebook', src: '/sns/facebook.svg', name: '페이스북' },
