@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export const Header = () => {
   return (
-    <div className="w-full h-full items-center flex justify-between">
-      <div className="flex relative h-9 basis-2/12 justify-center">
+    <div className="flex items-center justify-between w-full h-full">
+      <div className="relative flex justify-center h-9 basis-2/12">
         <Image
           src={'/logo.png'}
           alt="friending-logo"
@@ -11,7 +11,9 @@ export const Header = () => {
           objectFit="contain"
         />
       </div>
-      <div className="flex basis-2/12 font-bold justify-center">CONTACT</div>
+      <div className="flex items-center justify-center font-bold basis-2/12 h-9">
+        CONTACT
+      </div>
     </div>
   );
 };
