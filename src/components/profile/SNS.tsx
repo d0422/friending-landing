@@ -3,7 +3,7 @@ import { SNSButton } from './SNSButton';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Modal } from './Modal';
-import { render } from 'react-dom';
+
 export const SNSList = [
   {
     tag: 'phone',
@@ -19,10 +19,11 @@ export const SNSList = [
   { tag: 'kakaoTalk', src: '/sns/kakaoTalk.svg', name: '카톡' },
   { tag: 'email', src: '/sns/email.svg', name: '이메일' },
   { tag: 'facebook', src: '/sns/facebook.svg', name: '페이스북' },
-  { tag: 'discord', src: '/sns/discord.svg', name: '블로그' },
+  { tag: 'discord', src: '/sns/discord.svg', name: '네이버블로그' },
   { tag: 'naverBlog', src: '/sns/blog.svg', name: '스레드' },
   { tag: 'telegram', src: '/sns/telegram.svg', name: '텔레그램' },
 ];
+
 export const SNS = ({ data }: { data: ProfileCard }) => {
   const [isOpen, setOpen] = useState(false);
   const renderSNSList = SNSList.filter((sns) => data[sns.tag]);
@@ -38,7 +39,12 @@ export const SNS = ({ data }: { data: ProfileCard }) => {
         )}
         <div className="flex gap-4 mt-8">
           {renderSNSList.slice(0, 4).map((sns) => (
-            <SNSButton img={sns.src} href={data[sns.tag]} />
+            <SNSButton
+              name={sns.name}
+              img={sns.src}
+              href={data[sns.tag]}
+              key={sns.name}
+            />
           ))}
           <div
             className="p-3 rounded-full w-12 bg-[#EAEAFF] flex justify-center items-center"
@@ -60,7 +66,12 @@ export const SNS = ({ data }: { data: ProfileCard }) => {
   return (
     <div className="flex gap-4 mt-8">
       {renderSNSList.map((sns) => (
-        <SNSButton img={sns.src} href={data[sns.tag]} />
+        <SNSButton
+          name={sns.name}
+          img={sns.src}
+          href={data[sns.tag]}
+          key={sns.name}
+        />
       ))}
     </div>
   );
