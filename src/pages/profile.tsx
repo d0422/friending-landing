@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { SNS } from '@/components/profile/SNS';
-
+import { toPng } from 'html-to-image';
 export interface ProfileCard {
   [key: string]: any;
   discord: string;
@@ -30,9 +30,11 @@ export interface ProfileCard {
   whatsapp: string;
   workSpace: string;
 }
+
 export default function Profile() {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState<ProfileCard>();
+  const downloadRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     axios
       .get(`/profile/${window.location.search.split(/\?id\=/)[1]}`)
@@ -41,14 +43,29 @@ export default function Profile() {
     setData(data);
   }, []);
 
+  const downLoad = async () => {
+    if (downloadRef.current) {
+      toPng(downloadRef.current).then((data) => {
+        const link = document.createElement('a');
+        link.download = 'card.png';
+        link.href = data;
+        link.click();
+      });
+    }
+  };
+
   if (isLoading || !data) {
     return <div>로딩중</div>;
   }
+
   if (data)
     return (
       <div className="flex flex-col items-center justify-center w-full gap-8 p-4 text-black bg-white">
         <div className="text-2xl font-bold">프렌딩 요청이 왔어요</div>
-        <div className="relative bg-white rounded-2xl max-w-[350px] w-full shadow-md flex-col flex gap-8 justify-center items-center">
+        <div
+          ref={downloadRef}
+          className="relative bg-white rounded-2xl max-w-[350px] w-full shadow-md flex-col flex gap-8 justify-center items-center"
+        >
           <Image
             src={'/defaultThumbnail.png'}
             alt="profileImg"
@@ -58,12 +75,6 @@ export default function Profile() {
             style={{ width: '100%' }}
           />
           <div className="flex flex-col w-full gap-2 px-8 pb-8">
-            <div className="absolute top-[3%] left-[5%] ">
-              <div className="flex items-center justify-center px-2 rounded bg-secondary">
-                {data?.usage}
-              </div>
-            </div>
-
             <div className="flex items-end justify-start w-full gap-4">
               <div className="text-5xl font-bold">{data?.name}</div>
               <div className="flex items-center justify-center p-1 rounded bg-secondary text-primary ">
@@ -86,7 +97,10 @@ export default function Profile() {
           <div>앱을 무료로 사용할 수 있어요!</div>
         </div>
         <div className="flex gap-4">
-          <div className="bg-[#EAEAFF] text-primary p-4 rounded-lg font-bold px-10">
+          <div
+            onClick={downLoad}
+            className="cursor-pointer bg-[#EAEAFF] text-primary p-4 rounded-lg font-bold px-10"
+          >
             사진으로 저장
           </div>
           <div className="bg-[#514FFF] text-white p-4 rounded-lg font-bold px-10">
