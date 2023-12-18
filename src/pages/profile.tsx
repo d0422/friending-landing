@@ -67,12 +67,13 @@ export default function Profile() {
           className="relative bg-white rounded-2xl max-w-[350px] w-full shadow-md flex-col flex gap-8 justify-center items-center"
         >
           <Image
-            src={'/defaultThumbnail.png'}
+            src={data.image || '/defaultThumbnail.png'}
             alt="profileImg"
             sizes="100vw"
             width={0}
             height={0}
             style={{ width: '100%' }}
+            className="rounded-t-2xl"
           />
           <div className="flex flex-col w-full gap-2 px-8 pb-8">
             <div className="flex items-end justify-start w-full gap-4">
