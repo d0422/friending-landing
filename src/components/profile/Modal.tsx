@@ -23,8 +23,11 @@ export const Modal = ({
         <div className="mb-6 text-xl font-bold">SNS 더보기</div>
         <div className="grid grid-cols-4 gap-6">
           {renderSNSList.map((sns) => (
-            <div className="flex flex-col items-center justify-center gap-1">
-              <SNSButton img={sns.src} href={data[sns.name]} />
+            <div
+              className="flex flex-col items-center justify-center gap-1"
+              key={sns.name}
+            >
+              <SNSButton img={sns.src} href={data[sns.name]} name={sns.name} />
               <div className="text-xs">{sns.name}</div>
             </div>
           ))}
