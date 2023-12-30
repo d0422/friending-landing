@@ -39,11 +39,12 @@ export default function Profile() {
 
   useEffect(() => {
     axios
-      .post(`/token`, {
+      .post(`/webLink`, {
         token: window.location.search.split(/\?token\=/)[1],
       })
       .then((res) => setData(res.data))
-      .catch(() => {
+      .catch((err) => {
+        console.log(err);
         setError(true);
       });
     setLoading(false);
