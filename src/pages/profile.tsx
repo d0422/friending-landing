@@ -42,10 +42,7 @@ export default function Profile() {
       .post(`/api/webLink`, {
         token: window.location.search.split(/\?token\=/)[1],
       })
-      .then((res) => setData(res.data))
-      .catch((err) => {
-        setError(true);
-      });
+      .then((res) => (res.status === 200 ? setError(true) : setData(res.data)));
     setLoading(false);
     setData(data);
   }, []);
