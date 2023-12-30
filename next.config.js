@@ -12,8 +12,8 @@ const nextConfig = {
   rewrites: async function () {
     return [
       {
-        source: '/profile/:id',
-        destination: 'http://api.friending.online/profile/:id',
+        source: '/profile/:path*',
+        destination: 'http://api.friending.online/profile/:path*',
       },
     ];
   },

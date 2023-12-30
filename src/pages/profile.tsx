@@ -37,7 +37,9 @@ export default function Profile() {
   const downloadRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     axios
-      .get(`/profile/${window.location.search.split(/\?id\=/)[1]}`)
+      .post(`/profile`, {
+        token: window.location.search.split(/\?token\=/)[1],
+      })
       .then((res) => setData(res.data));
     setLoading(false);
     setData(data);
