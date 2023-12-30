@@ -12,7 +12,7 @@ const nextConfig = {
   rewrites: async function () {
     return [
       {
-        source: '/profile',
+        source: '/token',
         destination: 'http://api.friending.online/profile',
       },
     ];

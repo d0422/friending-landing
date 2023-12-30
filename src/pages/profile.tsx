@@ -33,14 +33,19 @@ export interface ProfileCard {
 
 export default function Profile() {
   const [isLoading, setLoading] = useState(true);
+  const [isError, setError] = useState(false);
   const [data, setData] = useState<ProfileCard>();
   const downloadRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     axios
-      .post(`/profile`, {
+      .post(`/token`, {
         token: window.location.search.split(/\?token\=/)[1],
       })
-      .then((res) => setData(res.data));
+      .then((res) => setData(res.data))
+      .catch(() => {
+        setError(true);
+      });
     setLoading(false);
     setData(data);
   }, []);
@@ -55,9 +60,19 @@ export default function Profile() {
       });
     }
   };
-
+  if (isError) {
+    return (
+      <div className="flex items-center justify-center w-screen h-screen text-xl">
+        만료된 링크입니다!
+      </div>
+    );
+  }
   if (isLoading || !data) {
-    return <div>로딩중</div>;
+    return (
+      <div className="flex items-center justify-center w-screen h-screen text-xl">
+        로딩중
+      </div>
+    );
   }
 
   if (data)
