@@ -42,9 +42,15 @@ export default function Profile() {
       .post(`/api/webLink`, {
         token: window.location.search.split(/\?token\=/)[1],
       })
-      .then((res) => (res.data ? setData(res.data) : setError(true)));
-    setLoading(false);
-    setData(data);
+      .then((res) => {
+        if (res.data.name != 'AxiosError') {
+          setData(res.data);
+          setLoading(false);
+        } else {
+          setLoading(false);
+          setError(true);
+        }
+      });
   }, []);
 
   const downLoad = async () => {
