@@ -39,7 +39,7 @@ export default function Profile() {
 
   useEffect(() => {
     axios
-      .post(`/webLink`, {
+      .post(`/api/webLink`, {
         token: window.location.search.split(/\?token\=/)[1],
       })
       .then((res) => setData(res.data))

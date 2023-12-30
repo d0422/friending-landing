@@ -12,7 +12,7 @@ const nextConfig = {
   rewrites: async function () {
     return [
       {
-        source: '/webLink',
+        source: '/api/webLink',
         destination: 'http://api.friending.online/webLink',
       },
     ];
