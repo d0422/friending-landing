@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function webLink(
@@ -7,9 +7,13 @@ export default async function webLink(
 ) {
   if (req.method === 'POST') {
     const { token } = req.body;
-    const result = await axios.post('http://api.friending.online/webLink', {
-      token,
-    });
-    res.send(result.data);
+    try {
+      const result = await axios.post('http://api.friending.online/webLink', {
+        token,
+      });
+      res.send(result.data);
+    } catch (err: any) {
+      res.send(err);
+    }
   }
 }
