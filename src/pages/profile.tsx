@@ -44,7 +44,6 @@ export default function Profile() {
       })
       .then((res) => setData(res.data))
       .catch((err) => {
-        console.log(err);
         setError(true);
       });
     setLoading(false);
